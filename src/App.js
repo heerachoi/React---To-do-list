@@ -1,24 +1,18 @@
-// useState에 저장해 두었다가 나중에 사용한다.
 import React, {useState} from 'react';
 import './App.css';
-import TodoBoard from './component/TodoBoard';
+import Header from './component/Header';
+import Form from './component/Form';
+import TodoList from './component/TodoList';
 
 function App() {
-  const [inputValue, setInputValue] = useState('');
-  //  input에 inputValue 값을 넣어주어야 한다. - setInputValue을 사용해서
-  // useState([]) = 타입은 배열을 가리킨다.
-  const [todoList, setTodoList] = useState([]);
-
-  const addItem = () => {
-    // console.log('im here', inputValue);
-    setTodoList([...todoList, inputValue]); // 원래 내용 + 현재 input
-  };
-
+  const [inputTitle, setInputTitle] = useState('');
+  const [input, setInput] = useState('');
+  const [todos, setTodos] = useState([]);
   return (
-    <main>
-      <input value={inputValue} type='text' onChange={(event) => setInputValue(event.target.value)} />
-      <button onClick={addItem}>추가</button>
-      <TodoBoard todoList={todoList} />
+    <main className='main'>
+      <Header />
+      <Form inputTitle={inputTitle} setInputTitle={setInputTitle} input={input} setInput={setInput} todos={todos} setTodos={setTodos} />
+      <TodoList todos={todos} setTodos={setTodos} />
     </main>
   );
 }
