@@ -21,7 +21,6 @@ const TodoList = ({todos, setTodos}) => {
     for (let todo of arr) {
       if (todo.isDone === trueOrFalse) {
         resultDone.push(
-          // <li className='todo-list' key={todo.id}>
           <div className='todo-container' key={todo.id}>
             <h2 className='todo-title'>{todo.title}</h2>
             <div className='todo-context'>{todo.context}</div>
