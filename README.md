@@ -9,9 +9,15 @@
 
 
 ## 개발 환경 설정
-`npx create-react-app React--To-do-list`
-`cd React--To-do-list`
-`npm start`
+```sh
+npx create-react-app React--To-do-list
+```
+```sh
+cd React--To-do-list
+```
+```sh
+npm start
+```
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
