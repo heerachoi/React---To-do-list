@@ -1,6 +1,8 @@
 import './TodoList.css';
 
+// Todo 리스트
 const TodoList = ({todos, setTodos}) => {
+  // 완료 버튼이 onClick되면 실행되는 부분
   const handleComplete = (todo) => {
     setTodos(
       todos.map((item) => {
@@ -12,13 +14,16 @@ const TodoList = ({todos, setTodos}) => {
     );
   };
 
+  // 삭제 버튼이 onClick되면 실행되는 부분
   const handleDelete = ({id}) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
-  const checkDone = (arr, trueOrFalse) => {
+  // Todos와 Work는 false값을 받아오고 Done은 true값을 받아온다.
+  // trueOrFalse의 상태에 따라 isDone을 확인해서 resultDone에 추가하여 배열을 return한다.
+  const checkDone = (todos, trueOrFalse) => {
     let resultDone = [];
-    for (let todo of arr) {
+    for (let todo of todos) {
       if (todo.isDone === trueOrFalse) {
         resultDone.push(
           <div className='todo-container' key={todo.id}>
@@ -33,7 +38,6 @@ const TodoList = ({todos, setTodos}) => {
               </button>
             </div>
           </div>
-          // </li>
         );
       }
     }

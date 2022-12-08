@@ -1,5 +1,6 @@
 import './Header.css';
 
+// 프로젝트 제목 부분
 const Header = () => {
   return (
     <div className='header'>

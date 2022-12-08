@@ -2,12 +2,15 @@ import {v4 as uuidv4} from 'uuid';
 import './Form.css';
 
 const Form = ({inputTitle, setInputTitle, input, setInput, todos, setTodos}) => {
+  // 제목이 입력 되었을 경우 onChange로 실행되는 부분
   const onInputTitleChange = (event) => {
     setInputTitle(event.target.value);
   };
+  // 내용이 입력 되었을 경우 onChange로 실행되는 부분
   const onInputChange = (event) => {
     setInput(event.target.value);
   };
+  //  onSubmit로 실행되는 부분
   const onFormSubmit = (event) => {
     event.preventDefault();
     setTodos([...todos, {id: uuidv4(), title: inputTitle, context: input, isDone: false}]);
