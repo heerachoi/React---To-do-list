@@ -20,6 +20,7 @@
     font-weight: 700;
     height: 40px;
     width: 140px;
+    cursor: pointer;
 }
 
 .task-input {
