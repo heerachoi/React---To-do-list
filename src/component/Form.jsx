@@ -31,10 +31,14 @@ const Form = ({setTodos}) => {
   return (
     <form className='todo-form' onSubmit={onFormSubmit}>
       <div className='input-group'>
-        <div className='title'>제목</div>
-        <input type='text' className='task-input' value={inputTitle} name='text' onChange={onInputTitleChange} />
-        <div className='title'>내용</div>
-        <input type='text' className='task-input' value={input} name='text' onChange={onInputChange} />
+        <label className='title' htmlFor='form-title'>
+          제목
+        </label>
+        <input id='form-title' type='text' className='task-input' value={inputTitle} name='text' onChange={onInputTitleChange} />
+        <label className='title' htmlFor='form-content'>
+          내용
+        </label>
+        <input id='form-content' type='text' className='task-input' value={input} name='text' onChange={onInputChange} />
       </div>
       <button className='button-add' type='submit'>
         추가하기
